@@ -16,9 +16,7 @@ import { handleValidationErrors, checkAuth } from './utils/index.js';
 import { UserController, PostController } from './controllers/index.js';
 
 mongoose
-  .connect(
-    'mongodb+srv://diana:diana13@cluster0.oliwooe.mongodb.net/blog?retryWrites=true&w=majority&appName=Cluster0'
-  )
+  .connect(process.env.MONGO_URI)
   .then(() => console.log('DB ok'))
   .catch((err) => console.log('DB error', err));
 
